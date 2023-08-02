@@ -14,7 +14,11 @@ jobs:
       - name: run command
         run: |
           echo "inside main job"
-  reuse_workflow:
+  reuse_remote_workflow:
     uses: nickvholbrook/workflow-reuse-remote/.github/workflows/test.yml@main
+    with:
+      branch: main
+  reuse_local_workflow:
+    uses: nickvholbrook/workflow-reuse/.github/workflows/test.yml@main
     with:
       branch: main
